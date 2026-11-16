@@ -11,12 +11,13 @@ public class ArithmeticOperations {
         int num2 = scanner.nextInt();
         int choice=0;
         double result=0;
-        while(choice <= 5){
+        while(choice != 6){
             System.out.println("1. Addition");
             System.out.println("2. Subtraction");
             System.out.println("3. Multiplication");
             System.out.println("4. Division");
-            System.out.println("5. Exit");
+            System.out.println("5. Modulus");
+            System.out.println("6. Exit");
             System.out.println("enter choice: ");
             choice = scanner.nextInt();
             
@@ -31,9 +32,22 @@ public class ArithmeticOperations {
                     result = num1*num2;
                     break;
                 case 4:
-                    result = num1/num2;
+                    if(num2 == 0){
+                        System.out.println("Zero division error");
+                    }
+                    else{
+                        result = (double) num1/num2;
+                    }
                     break;
                 case 5:
+                    if(num2 == 0){
+                        System.out.println("Zero division error");
+                    }
+                    else{
+                        result = num1%num2;
+                    }
+                    break;
+                case 6:
                     System.out.println("exiting");
                     break;
 
